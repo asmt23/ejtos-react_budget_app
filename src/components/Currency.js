@@ -6,8 +6,8 @@ const Currency = () => {
     const { dispatch } = useContext(AppContext);
 
     const currencies = [
-        { curr: "$", label: "$ Dollar" },
         { curr: "£", label: "£ Pound" },
+        { curr: "$", label: "$ Dollar" },
         { curr: "€", label: "€ Euro" },
         { curr: "₹", label: "₹ Rupee" }
     ]
@@ -15,15 +15,21 @@ const Currency = () => {
     const [curr, setCurr] = useState("Currency (Pound)");
     const handleCurrChange = (e) => {
         setCurr(e.target.value);
+        dispatch({
+            type: 'CHG_CURRENCY',
+            payload: e.target.value,
+        });
     }
     return (
+        <div className="input-group mb-3">
         <div className = "input-group-prepend">
             <label className="input-group-text">
                 Currency
-                <select onChange={handleCurrChange}>
+                </label>
+                </div>
+                <select className="custom-select" onChange={handleCurrChange}>
                     {currencies.map((currency) => <option value={currency.curr}>{currency.label}</option>)}
                 </select>
-            </label>
         </div>
     );
 }
