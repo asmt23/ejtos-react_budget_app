@@ -39,29 +39,26 @@ const App = () => {
                         </div>
                     }
 
-                    {
+                </div>
+            </div>
+            <div className='container'>
+            <h2 className='mt-3'>Allocation</h2>
+            {
                         // ExpenseList component
                         <div className='col-sm'>
                             <ExpenseList />
                         </div>
                     }
-
-                    {
-                        // ExpenseItem component
-                        <div className='col-sm'>
-                            <ExpenseItem />
-                        </div>
-                    }
-
-                    {
+                </div>
+                <div className='container'>
+            <h2 className='mt-3'>Change allocation</h2>
+            {
                         // AllocationForm component
                         <div className='col-sm'>
                             <AllocationForm />
                         </div>
                     }
-
                 </div>
-            </div>
         </AppProvider>
     );
 };
